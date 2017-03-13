@@ -1,0 +1,72 @@
+html {
+	/*background-image: url(../images/Riften_2.png);*/
+	background-color:black;
+}
+
+@font-face {
+	font-family: "BreatheFire";
+	src:url(../images/BreatheFire.otf);
+}
+
+@font-face {
+	font-family: "Janitor";
+	src:url(../images/Janitor.ttf);
+}
+
+h1, h2, p, h4, #scoreText, #yourScore, #randomNo, #wins, #losses {
+	color:white;
+	font-family: "BreatheFire";
+	text-align:center;
+}
+
+h1 {
+	margin-top:10px;
+	font-weight:bold;
+	font-size:100px;
+	text-align:center;
+	color: white;
+  	background: url(../images/Riftenmarket.png) repeat;
+   	-webkit-background-clip: text;
+   	-webkit-text-fill-color: transparent;
+}
+
+#instructions {
+	background-image:url(../images/parchment1.png);
+	height:1000px;
+	width:700px;
+	background-size:100%;
+	background-repeat:no-repeat;
+	margin:auto;
+	margin-top:-70px;
+	float:left;
+	padding-top:10px;
+}
+
+#instructions p {
+	padding-left:110px;
+	padding-right:110px;
+	font-size:23px;
+	color:black;
+	text-align:left;
+	font-family: "Janitor";
+}
+
+.button {
+	height:100px;
+	width:100px;
+	padding:40px 10px 30px 60px;
+	border:none;
+}
+
+h4, #randomNo, #scoreText, #winsLosses, #yourScore, #wins, #losses  {
+	font-size:40px;
+	color: white;
+  	background: url(../images/gold.png) repeat;
+   	-webkit-background-clip: text;
+   	-webkit-text-fill-color: transparent;
+}
+
+#name {
+	padding-top:120px;
+	text-align:left;
+}

@@ -19,6 +19,9 @@ var losses;
 
 //onload
 $(document).ready(function() {
+//alert asks the user's name
+var name=prompt("What is your name?");
+$("#name").prepend(name);
 //Computer generates a random number between 19 and 120
 $("#randomNo").html(randomNo);
 //each button is assigned a random number between 1 and 12
@@ -33,26 +36,25 @@ $("#wins").html(wins);
 losses=0;
 $("#losses").html(losses);
 
-$("#yourScore").text(userGuess);
-
+$("#yourScore").html(userGuess);
 
 //onclick
 //the amount that that button is worth is added to the number in the user guess div
 $("#crystalOne").on("click", function() {
 	userGuess= parseInt(userGuess) + parseInt(crystalOneValue);
-	$("#yourScore").text(userGuess);
+	$("#yourScore").html(userGuess);
 });
 $("#crystalTwo").on("click", function() {
 	userGuess= parseInt(userGuess) + parseInt(crystalTwoValue);
-	$("#yourScore").text(userGuess);
+	$("#yourScore").html(userGuess);
 });
 $("#crystalThree").on("click", function() {
 	userGuess= parseInt(userGuess) + parseInt(crystalThreeValue);
-	$("#yourScore").text(userGuess);
+	$("#yourScore").html(userGuess);
 });
 $("#crystalFour").on("click", function() {
 	userGuess= parseInt(userGuess) + parseInt(crystalFourValue);
-	$("#yourScore").text(userGuess);
+	$("#yourScore").html(userGuess);
 });
 
 
@@ -60,10 +62,19 @@ $("#crystalFour").on("click", function() {
 $(".button").on("click", function() {
 	if (userGuess===randomNo) {
 		//alert
-		alert("You got the correct number!");
+		//alert("You got the correct number!");
 		//the number of wins goes up
 		wins++;
 		$("#wins").html(wins);
+
+		if (wins === 5) {
+		alert("The Guild has accepted you. Report to the Ratway immediately for your first quest.");
+		losses=0;
+		 $("#losses").html(losses);
+		  wins=0;
+		 $("#wins").html(wins);
+	}
+
 	//resets
 		//chooses a new number
 		randomNo=Math.floor((Math.random() * 120) + 19);
@@ -78,15 +89,23 @@ $(".button").on("click", function() {
 		 crystalFourValue=Math.floor((Math.random() * 12) + 1);
 		 //userGuess goes back to 0
 		 userGuess=0;
-		 $("#yourScore").text(userGuess);
+		 $("#yourScore").html(userGuess);
 	}
 //if the number goes over the randomly generated number
 	//the number of losses goes up
 	//resets
 	else if (userGuess > randomNo) {
-		alert("You went over!");
+		//alert("You went over!");
 		losses++;
 		$("#losses").html(losses);
+
+		if (losses === 5) {
+		alert("The Guild is unimpressed. Better luck joining the Dark Brotherhood.");
+		losses=0;
+		 $("#losses").html(losses);
+		  wins=0;
+		 $("#wins").html(wins);
+}
 		//resets
 		//chooses a new number
 		randomNo=Math.floor((Math.random() * 120) + 19);
@@ -105,10 +124,9 @@ $(".button").on("click", function() {
 		 console.log(crystalFourValue);
 		 //userGuess goes back to 0
 		 userGuess=0;
-		 $("#yourScore").text(userGuess);
-	}
-	
+		 $("#yourScore").html(userGuess);
 
+	}
 
 
 });
