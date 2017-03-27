@@ -40,26 +40,41 @@ $("#yourScore").html(userGuess);
 
 //onclick
 //the amount that that button is worth is added to the number in the user guess div
-$("#crystalOne").on("click", function() {
+$("#crystalOne").on("click", function click() {
 	userGuess= parseInt(userGuess) + parseInt(crystalOneValue);
 	$("#yourScore").html(userGuess);
 });
-$("#crystalTwo").on("click", function() {
+$("#crystalTwo").on("click", function click() {
 	userGuess= parseInt(userGuess) + parseInt(crystalTwoValue);
 	$("#yourScore").html(userGuess);
 });
-$("#crystalThree").on("click", function() {
+$("#crystalThree").on("click", function click() {
 	userGuess= parseInt(userGuess) + parseInt(crystalThreeValue);
 	$("#yourScore").html(userGuess);
 });
-$("#crystalFour").on("click", function() {
+$("#crystalFour").on("click", function click() {
 	userGuess= parseInt(userGuess) + parseInt(crystalFourValue);
 	$("#yourScore").html(userGuess);
 });
 
+function reset() {
+	randomNo=Math.floor((Math.random() * 120) + 19);
+		$("#randomNo").html(randomNo);
+		//chooses new button values
+		 crystalOneValue=Math.floor((Math.random() * 12) + 1);
+		//var holding the randomly generated amount for crystalTwo
+		 crystalTwoValue=Math.floor((Math.random() * 12) + 1);
+		//var holding the randomly generated amount for crystalThree
+		 crystalThreeValue=Math.floor((Math.random() * 12) + 1);
+		//var holding the randomly generated amount for crystalFour
+		 crystalFourValue=Math.floor((Math.random() * 12) + 1);
+		 //userGuess goes back to 0
+		 userGuess=0;
+		 $("#yourScore").html(userGuess);
+}
 
 //when the number equals the randomly generated number
-$(".button").on("click", function() {
+$(".button").click(function() {
 	if (userGuess===randomNo) {
 		//alert
 		//alert("You got the correct number!");
@@ -75,23 +90,12 @@ $(".button").on("click", function() {
 		 $("#wins").html(wins);
 	}
 
-	//resets
-		//chooses a new number
-		randomNo=Math.floor((Math.random() * 120) + 19);
-		$("#randomNo").html(randomNo);
-		//chooses new button values
-		 crystalOneValue=Math.floor((Math.random() * 12) + 1);
-		//var holding the randomly generated amount for crystalTwo
-		 crystalTwoValue=Math.floor((Math.random() * 12) + 1);
-		//var holding the randomly generated amount for crystalThree
-		 crystalThreeValue=Math.floor((Math.random() * 12) + 1);
-		//var holding the randomly generated amount for crystalFour
-		 crystalFourValue=Math.floor((Math.random() * 12) + 1);
-		 //userGuess goes back to 0
-		 userGuess=0;
-		 $("#yourScore").html(userGuess);
+	reset();
+
+
 	}
-//if the number goes over the randomly generated number
+
+	//if the number goes over the randomly generated number
 	//the number of losses goes up
 	//resets
 	else if (userGuess > randomNo) {
@@ -106,30 +110,13 @@ $(".button").on("click", function() {
 		  wins=0;
 		 $("#wins").html(wins);
 }
-		//resets
-		//chooses a new number
-		randomNo=Math.floor((Math.random() * 120) + 19);
-		$("#randomNo").html(randomNo);
-		//chooses new button values
-		 crystalOneValue=Math.floor((Math.random() * 12) + 1);
-		 console.log(crystalOneValue);
-		//var holding the randomly generated amount for crystalTwo
-		 crystalTwoValue=Math.floor((Math.random() * 12) + 1);
-		 console.log(crystalTwoValue);
-		//var holding the randomly generated amount for crystalThree
-		 crystalThreeValue=Math.floor((Math.random() * 12) + 1);
-		 console.log(crystalThreeValue);
-		//var holding the randomly generated amount for crystalFour
-		 crystalFourValue=Math.floor((Math.random() * 12) + 1);
-		 console.log(crystalFourValue);
-		 //userGuess goes back to 0
-		 userGuess=0;
-		 $("#yourScore").html(userGuess);
+		
+		reset();
 
 	}
 
-
 });
+	
 
 });
 
