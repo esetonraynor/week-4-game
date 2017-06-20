@@ -3,10 +3,16 @@ Do you have the finesse (and the math skills) to join the Thieves Guild? Your ch
 
 ##See it in action.
 When the screen loads, the user will type in his or her name. When the game loads, the following screenshot represents user view:
+
 ![Home Page](assets/images/home.png)
 
 The user must click the gold pouches to see how much each is worth. If they are able to get the precise sum of money asked for, they will receive a point. The general gameplay is demonstrated below:
+
 ![Gameplay Gif](assets/images/gif.gif)
+
+The CSS is responsive, as shown below:
+
+![Mobile](assets/images/mobile.png)
 
 ## Built With
 Javascript, jQuery, responsive CSS
